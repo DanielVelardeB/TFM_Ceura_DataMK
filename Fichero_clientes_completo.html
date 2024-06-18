@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.43">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>fichero_clientes_completo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="Fichero_clientes_completo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Fichero_clientes_completo_files/libs/quarto-html/quarto.js"></script>
+<script src="Fichero_clientes_completo_files/libs/quarto-html/popper.min.js"></script>
+<script src="Fichero_clientes_completo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Fichero_clientes_completo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Fichero_clientes_completo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Fichero_clientes_completo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Fichero_clientes_completo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Fichero_clientes_completo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Fichero_clientes_completo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<div id="2c10557a-3e34-431f-8d40-b107a8fb2912" class="cell" data-tags="[]" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="8461ebed-b6e3-4e81-9cec-b1d4d6c115e7" class="cell" data-tags="[]" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"events.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="3ffc5c5f-84cc-497a-86fa-2057da7a55aa" class="cell" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">user_id</th>
+<th data-quarto-table-cell-role="th">sequence_number</th>
+<th data-quarto-table-cell-role="th">session_id</th>
+<th data-quarto-table-cell-role="th">created_at</th>
+<th data-quarto-table-cell-role="th">ip_address</th>
+<th data-quarto-table-cell-role="th">city</th>
+<th data-quarto-table-cell-role="th">state</th>
+<th data-quarto-table-cell-role="th">postal_code</th>
+<th data-quarto-table-cell-role="th">browser</th>
+<th data-quarto-table-cell-role="th">traffic_source</th>
+<th data-quarto-table-cell-role="th">uri</th>
+<th data-quarto-table-cell-role="th">event_type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2198523</td>
+<td>NaN</td>
+<td>3</td>
+<td>83889ed2-2adc-4b9a-af5d-154f6998e778</td>
+<td>2021-06-17 17:30:00+00:00</td>
+<td>138.143.9.202</td>
+<td>São Paulo</td>
+<td>São Paulo</td>
+<td>02675-031</td>
+<td>Chrome</td>
+<td>Adwords</td>
+<td>/cancel</td>
+<td>cancel</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1773216</td>
+<td>NaN</td>
+<td>3</td>
+<td>7a3fc3f2-e84f-44fe-8876-eff76741f7a3</td>
+<td>2020-08-07 08:41:00+00:00</td>
+<td>85.114.141.79</td>
+<td>Santa Isabel</td>
+<td>São Paulo</td>
+<td>07500-000</td>
+<td>Safari</td>
+<td>Adwords</td>
+<td>/cancel</td>
+<td>cancel</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2380515</td>
+<td>NaN</td>
+<td>3</td>
+<td>13d9b2fb-eee1-43fd-965c-267b38dd7125</td>
+<td>2021-02-15 18:48:00+00:00</td>
+<td>169.250.255.132</td>
+<td>Mairiporã</td>
+<td>São Paulo</td>
+<td>07600-000</td>
+<td>IE</td>
+<td>Adwords</td>
+<td>/cancel</td>
+<td>cancel</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2250597</td>
+<td>NaN</td>
+<td>3</td>
+<td>96f1d44e-9621-463c-954c-d8deb7fffe7f</td>
+<td>2022-03-30 10:56:00+00:00</td>
+<td>137.25.222.160</td>
+<td>Cajamar</td>
+<td>São Paulo</td>
+<td>07750-000</td>
+<td>Chrome</td>
+<td>Adwords</td>
+<td>/cancel</td>
+<td>cancel</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1834446</td>
+<td>NaN</td>
+<td>3</td>
+<td>d09dce10-a7cb-47d3-a9af-44975566fa03</td>
+<td>2019-09-05 01:18:00+00:00</td>
+<td>161.114.4.174</td>
+<td>São Paulo</td>
+<td>São Paulo</td>
+<td>09581-680</td>
+<td>Chrome</td>
+<td>Email</td>
+<td>/cancel</td>
+<td>cancel</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="53a764d7-529e-491f-ad6c-e714f05ba226" class="cell" data-tags="[]" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 2431963 entries, 0 to 2431962
+Data columns (total 13 columns):
+ #   Column           Dtype  
+---  ------           -----  
+ 0   id               int64  
+ 1   user_id          float64
+ 2   sequence_number  int64  
+ 3   session_id       object 
+ 4   created_at       object 
+ 5   ip_address       object 
+ 6   city             object 
+ 7   state            object 
+ 8   postal_code      object 
+ 9   browser          object 
+ 10  traffic_source   object 
+ 11  uri              object 
+ 12  event_type       object 
+dtypes: float64(1), int64(2), object(10)
+memory usage: 241.2+ MB</code></pre>
+</div>
+</div>
+<div id="0a796ea9-fefc-480a-8199-fac3d04e072f" class="cell" data-tags="[]" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>eventos_clientes <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">"user_id"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="b1bdd666-2eec-4358-badd-b47a0aec895d" class="cell" data-tags="[]" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>eventos_clientes.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Int64Index: 1306292 entries, 1251 to 2431962
+Data columns (total 13 columns):
+ #   Column           Non-Null Count    Dtype  
+---  ------           --------------    -----  
+ 0   id               1306292 non-null  int64  
+ 1   user_id          1306292 non-null  float64
+ 2   sequence_number  1306292 non-null  int64  
+ 3   session_id       1306292 non-null  object 
+ 4   created_at       1306292 non-null  object 
+ 5   ip_address       1306292 non-null  object 
+ 6   city             1294116 non-null  object 
+ 7   state            1306292 non-null  object 
+ 8   postal_code      1306292 non-null  object 
+ 9   browser          1306292 non-null  object 
+ 10  traffic_source   1306292 non-null  object 
+ 11  uri              1306292 non-null  object 
+ 12  event_type       1306292 non-null  object 
+dtypes: float64(1), int64(2), object(10)
+memory usage: 139.5+ MB</code></pre>
+</div>
+</div>
+<div id="7b053f71-3854-45aa-856b-fe682910aeb0" class="cell" data-tags="[]" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>eventos_clientes.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">user_id</th>
+<th data-quarto-table-cell-role="th">sequence_number</th>
+<th data-quarto-table-cell-role="th">session_id</th>
+<th data-quarto-table-cell-role="th">created_at</th>
+<th data-quarto-table-cell-role="th">ip_address</th>
+<th data-quarto-table-cell-role="th">city</th>
+<th data-quarto-table-cell-role="th">state</th>
+<th data-quarto-table-cell-role="th">postal_code</th>
+<th data-quarto-table-cell-role="th">browser</th>
+<th data-quarto-table-cell-role="th">traffic_source</th>
+<th data-quarto-table-cell-role="th">uri</th>
+<th data-quarto-table-cell-role="th">event_type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1251</td>
+<td>458138</td>
+<td>35092.0</td>
+<td>3</td>
+<td>e24636ad-3949-4174-bd09-4e2ae7a95aa3</td>
+<td>2022-08-01 01:10:20+00:00</td>
+<td>92.212.103.243</td>
+<td>Sapporo</td>
+<td>Hokkaido</td>
+<td>003-0030</td>
+<td>Chrome</td>
+<td>Facebook</td>
+<td>/cart</td>
+<td>cart</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1252</td>
+<td>444176</td>
+<td>34028.0</td>
+<td>6</td>
+<td>b334f6d8-a1fd-42e9-90e4-8e8d2af7a663</td>
+<td>2021-07-13 23:14:04+00:00</td>
+<td>176.14.231.160</td>
+<td>Sapporo</td>
+<td>Hokkaido</td>
+<td>007-0890</td>
+<td>Safari</td>
+<td>Email</td>
+<td>/cart</td>
+<td>cart</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1253</td>
+<td>170896</td>
+<td>13199.0</td>
+<td>4</td>
+<td>1df890d5-6783-4602-aa0a-e6668fed606e</td>
+<td>2023-11-05 10:45:45+00:00</td>
+<td>114.185.130.47</td>
+<td>São Paulo</td>
+<td>São Paulo</td>
+<td>02220-000</td>
+<td>Safari</td>
+<td>Email</td>
+<td>/cart</td>
+<td>cart</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1257</td>
+<td>1147243</td>
+<td>87818.0</td>
+<td>3</td>
+<td>e99fd570-3c66-4475-ab68-41c4a0da4bbc</td>
+<td>2021-01-01 06:55:11+00:00</td>
+<td>138.36.176.82</td>
+<td>São Paulo</td>
+<td>São Paulo</td>
+<td>02675-031</td>
+<td>Chrome</td>
+<td>Email</td>
+<td>/cart</td>
+<td>cart</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1259</td>
+<td>604658</td>
+<td>46234.0</td>
+<td>3</td>
+<td>d566d275-4aea-4e90-be87-f119b4369f48</td>
+<td>2023-12-22 12:38:20+00:00</td>
+<td>163.100.101.188</td>
+<td>São Paulo</td>
+<td>São Paulo</td>
+<td>02675-031</td>
+<td>Safari</td>
+<td>Adwords</td>
+<td>/cart</td>
+<td>cart</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="ed5de91d-9e55-44f3-b646-d073c7d3a241" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>eventos_clientes <span class="op">=</span> eventos_clientes.drop([<span class="st">'session_id'</span>,<span class="st">'created_at'</span>,<span class="st">'ip_address'</span>,<span class="st">'state'</span>,<span class="st">'postal_code'</span>,<span class="st">'city'</span>,<span class="st">'browser'</span>,<span class="st">'traffic_source'</span>,<span class="st">'uri'</span>], axis <span class="op">=</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="20c694fd-5e31-4ddd-98a1-f9ddac582640" class="cell" data-tags="[]" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>eventos_clientes.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Int64Index: 1306292 entries, 1251 to 2431962
+Data columns (total 4 columns):
+ #   Column           Non-Null Count    Dtype  
+---  ------           --------------    -----  
+ 0   id               1306292 non-null  int64  
+ 1   user_id          1306292 non-null  float64
+ 2   sequence_number  1306292 non-null  int64  
+ 3   event_type       1306292 non-null  object 
+dtypes: float64(1), int64(2), object(1)
+memory usage: 49.8+ MB</code></pre>
+</div>
+</div>
+<div id="16d4ecdb-e256-41bd-8606-7a9e22f79726" class="cell" data-tags="[]" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.read_csv(<span class="st">"users.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="c1017611-fbac-4a11-805c-97f37dde515d" class="cell" data-tags="[]" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df2.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 100000 entries, 0 to 99999
+Data columns (total 15 columns):
+ #   Column          Non-Null Count   Dtype  
+---  ------          --------------   -----  
+ 0   id              100000 non-null  int64  
+ 1   first_name      100000 non-null  object 
+ 2   last_name       100000 non-null  object 
+ 3   email           100000 non-null  object 
+ 4   age             100000 non-null  int64  
+ 5   gender          100000 non-null  object 
+ 6   state           100000 non-null  object 
+ 7   street_address  100000 non-null  object 
+ 8   postal_code     100000 non-null  object 
+ 9   city            99042 non-null   object 
+ 10  country         100000 non-null  object 
+ 11  latitude        100000 non-null  float64
+ 12  longitude       100000 non-null  float64
+ 13  traffic_source  100000 non-null  object 
+ 14  created_at      100000 non-null  object 
+dtypes: float64(2), int64(2), object(11)
+memory usage: 11.4+ MB</code></pre>
+</div>
+</div>
+<div id="393294de-d01a-4d86-bcb7-153f2798a2ea" class="cell" data-tags="[]" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df2.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">first_name</th>
+<th data-quarto-table-cell-role="th">last_name</th>
+<th data-quarto-table-cell-role="th">email</th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">gender</th>
+<th data-quarto-table-cell-role="th">state</th>
+<th data-quarto-table-cell-role="th">street_address</th>
+<th data-quarto-table-cell-role="th">postal_code</th>
+<th data-quarto-table-cell-role="th">city</th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">latitude</th>
+<th data-quarto-table-cell-role="th">longitude</th>
+<th data-quarto-table-cell-role="th">traffic_source</th>
+<th data-quarto-table-cell-role="th">created_at</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>457</td>
+<td>Timothy</td>
+<td>Bush</td>
+<td>timothybush@example.net</td>
+<td>65</td>
+<td>M</td>
+<td>Acre</td>
+<td>87620 Johnson Hills</td>
+<td>69917-400</td>
+<td>Rio Branco</td>
+<td>Brasil</td>
+<td>-9.945568</td>
+<td>-67.83561</td>
+<td>Search</td>
+<td>2022-07-19 13:51:00+00:00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>6578</td>
+<td>Elizabeth</td>
+<td>Martinez</td>
+<td>elizabethmartinez@example.com</td>
+<td>34</td>
+<td>F</td>
+<td>Acre</td>
+<td>1705 Nielsen Land</td>
+<td>69917-400</td>
+<td>Rio Branco</td>
+<td>Brasil</td>
+<td>-9.945568</td>
+<td>-67.83561</td>
+<td>Search</td>
+<td>2023-11-08 18:49:00+00:00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>36280</td>
+<td>Christopher</td>
+<td>Mendoza</td>
+<td>christophermendoza@example.net</td>
+<td>13</td>
+<td>M</td>
+<td>Acre</td>
+<td>125 Turner Isle Apt. 264</td>
+<td>69917-400</td>
+<td>Rio Branco</td>
+<td>Brasil</td>
+<td>-9.945568</td>
+<td>-67.83561</td>
+<td>Email</td>
+<td>2019-08-24 06:10:00+00:00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>60193</td>
+<td>Jimmy</td>
+<td>Conner</td>
+<td>jimmyconner@example.com</td>
+<td>64</td>
+<td>M</td>
+<td>Acre</td>
+<td>0966 Jose Branch Apt. 008</td>
+<td>69917-400</td>
+<td>Rio Branco</td>
+<td>Brasil</td>
+<td>-9.945568</td>
+<td>-67.83561</td>
+<td>Search</td>
+<td>2020-02-15 11:26:00+00:00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>64231</td>
+<td>Natasha</td>
+<td>Wilson</td>
+<td>natashawilson@example.net</td>
+<td>25</td>
+<td>F</td>
+<td>Acre</td>
+<td>20798 Phillip Trail Apt. 392</td>
+<td>69917-400</td>
+<td>Rio Branco</td>
+<td>Brasil</td>
+<td>-9.945568</td>
+<td>-67.83561</td>
+<td>Search</td>
+<td>2020-03-13 06:45:00+00:00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="7ea51184-6e10-491e-8984-4db07e4be79c" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df2.rename(columns<span class="op">=</span>{<span class="st">"id"</span>: <span class="st">"user_id"</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="2d39ac37-f870-4ebb-9d37-cd03dd12ade9" class="cell" data-tags="[]" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> eventos_clientes.merge(df2, on<span class="op">=</span><span class="st">"user_id"</span>, how<span class="op">=</span><span class="st">"left"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              id  user_id  sequence_number event_type  first_name  last_name  \
+0         458138  35092.0                3       cart       Linda     Watson   
+1         444176  34028.0                6       cart     Kaitlyn       Neal   
+2         170896  13199.0                4       cart       Sarah       Shaw   
+3        1147243  87818.0                3       cart      Brooke    Pittman   
+4         604658  46234.0                3       cart  Jacqueline  Velasquez   
+...          ...      ...              ...        ...         ...        ...   
+1306287   822590  62906.0                5   purchase     Brandon       Cruz   
+1306288    43178   3333.0                5   purchase     Katrina     Torres   
+1306289   553230  42386.0               10   purchase      Joseph  Whitehead   
+1306290  1015190  77546.0                5   purchase    Jeanette       Hunt   
+1306291   844526  64551.0               13   purchase     Anthony      Young   
+
+                                   email  age gender      state  \
+0                lindawatson@example.net   50      F   Hokkaido   
+1                kaitlynneal@example.org   70      F   Hokkaido   
+2                  sarahshaw@example.org   16      F  São Paulo   
+3              brookepittman@example.org   37      F  São Paulo   
+4        jacquelinevelasquez@example.com   12      F  São Paulo   
+...                                  ...  ...    ...        ...   
+1306287          brandoncruz@example.com   62      M    England   
+1306288        katrinatorres@example.com   66      F    England   
+1306289      josephwhitehead@example.com   26      M    England   
+1306290         jeanettehunt@example.com   53      F    England   
+1306291         anthonyyoung@example.org   24      M    England   
+
+                          street_address postal_code           city  \
+0           21465 Rhonda Field Suite 992    003-0030        Sapporo   
+1            04357 Darren Camp Suite 558    007-0890        Sapporo   
+2              876 Stewart Port Apt. 445   02220-000      São Paulo   
+3                         981 Brandi Via   02675-031      São Paulo   
+4           5135 Anderson Flat Suite 364   02675-031      São Paulo   
+...                                  ...         ...            ...   
+1306287                    178 Page Cove         WA9      St Helens   
+1306288  7105 Jennifer Gateway Suite 690         WN5         Orrell   
+1306289                   614 Tara Place         WN5         Orrell   
+1306290      731 Fuentes Skyway Apt. 351         WV6  Wolverhampton   
+1306291      465 Mckinney Point Apt. 434        YO10           York   
+
+                country   latitude   longitude traffic_source  \
+0                 Japan  43.038536  141.447883        Display   
+1                 Japan  43.136565  141.437433          Email   
+2                Brasil -23.484761  -46.574390         Search   
+3                Brasil -23.472562  -46.746566       Facebook   
+4                Brasil -23.472562  -46.746566         Search   
+...                 ...        ...         ...            ...   
+1306287  United Kingdom  53.433118   -2.713226          Email   
+1306288  United Kingdom  53.524774   -2.696855        Organic   
+1306289  United Kingdom  53.524774   -2.696855        Organic   
+1306290  United Kingdom  52.588752   -2.253200         Search   
+1306291  United Kingdom  53.939925   -1.035756         Search   
+
+                        created_at  
+0        2022-05-22 02:33:00+00:00  
+1        2020-02-20 01:20:00+00:00  
+2        2021-08-27 13:52:00+00:00  
+3        2020-05-26 07:42:00+00:00  
+4        2023-05-22 15:22:00+00:00  
+...                            ...  
+1306287  2021-09-08 02:03:00+00:00  
+1306288  2021-09-04 12:35:00+00:00  
+1306289  2023-03-16 16:02:00+00:00  
+1306290  2021-09-28 15:21:00+00:00  
+1306291  2022-08-18 13:03:00+00:00  
+
+[1306292 rows x 18 columns]</code></pre>
+</div>
+</div>
+<div id="940c74a3-4848-49bf-b7c4-633aabbdce86" class="cell" data-tags="[]" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df3.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>Index(['id', 'user_id', 'sequence_number', 'event_type', 'first_name',
+       'last_name', 'email', 'age', 'gender', 'state', 'street_address',
+       'postal_code', 'city', 'country', 'latitude', 'longitude',
+       'traffic_source', 'created_at'],
+      dtype='object')</code></pre>
+</div>
+</div>
+<div id="6cd7e095-40ae-4627-b6c5-d24d8b8fb5e2" class="cell" data-tags="[]" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df3.to_csv(<span class="st">'Clientes completo.csv'</span>, index <span class="op">=</span> <span class="va">False</span>, sep <span class="op">=</span> <span class="st">";"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
